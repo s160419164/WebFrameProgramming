@@ -64,8 +64,8 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">          
-             @if (Route::has('login'))
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -81,14 +81,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    MyStore
-                </div>
-                <div>
-                    <img src= "{{asset('img/medic.png')}}"/>
                 </div>
 
                 <div class="links">
-                <a href="{{route('catalog')}}">Catalog</a>
+                    <a href="{{route('medicines')}}">medicines</a>
+                    <a href="{{route('med_equip')}}">medical equipment</a>
+                </div>
+                <div>
+                
                 </div>
             </div>
         </div>

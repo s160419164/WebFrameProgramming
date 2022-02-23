@@ -64,8 +64,8 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">          
-             @if (Route::has('login'))
+        <div>
+            @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
@@ -81,14 +81,40 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    MyStore
+                 List of {{$name}}  
                 </div>
                 <div>
-                    <img src= "{{asset('img/medic.png')}}"/>
-                </div>
-
-                <div class="links">
-                <a href="{{route('catalog')}}">Catalog</a>
+                   @if($name=='medicines')
+                       <div>
+                           <div><h2><a href="{{route('detailmedicines',['id'=>'medicine_1'])}}">Paracetamol</a></h4></div>
+                           <div>
+                               <img src="{{asset('img/paracetamol.jpeg')}}"/>
+                           </div>
+                       </div>
+                       <div>
+                            <div><h2><a href="{{route('detailmedicines',['id'=>'medicine_2'])}}">Promag</a></h4></div>
+                            <div><img src="{{asset('img/promag.jpg')}}"/></div>
+                       </div>
+                       <div>
+                       <div>
+                            <div><h2><a href="{{route('detailmedicines',['id'=>'medicine_3'])}}">Konidin</a></h4></div>
+                            <div><img src="{{asset('img/konidin.jpg')}}"/></div>
+                       </div>
+                       <div>
+                    @elseif($name=='med_equip')
+                        <div>
+                            <div><h2><a href="{{route('detailequip',['id'=>'equip_1'])}}">Stetoskop</a></h4></div>
+                            <div><img src="{{asset('img/stetoskop.jpg')}}"/></div>
+                        </div>
+                        <div>
+                           <div><h2><a href="{{route('detailequip',['id'=>'equip_2'])}}">Tensimeter</a></h4></div>
+                           <div><img src="{{asset('img/tensimeter.jpg')}}"/></div>
+                        </div>
+                        <div>
+                           <div><h2><a href="{{route('detailequip',['id'=>'equip_3'])}}">Penlight</a></h4></div>
+                           <div><img src="{{asset('img/penlight.jpg')}}"/></div>
+                        </div>
+                   @endif
                 </div>
             </div>
         </div>

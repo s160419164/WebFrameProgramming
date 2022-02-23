@@ -40,3 +40,20 @@ Route::get('bayu', function () {
 Route::get('greeting',function(){
     return view ('welcome',['name' => 'bayu']);
 });
+
+Route::get('catalog/',function(){
+    return view('catalog'); 
+})->name('catalog');
+Route::get('catalog/medicines',function(){
+    return  view('list',['name'=>'medicines']); 
+})->name('medicines');
+Route::get('catalog/med_equip',function(){
+    return  view('list',['name'=>'med_equip']); 
+})->name('med_equip');
+
+Route::get('catalog/medicines/{id}',function($id){
+    return view('detail',['detailid'=>$id]); 
+})->name('detailmedicines');
+Route::get('catalog/med_equip/{id}',function($id){
+    return  view('detail',['detailid'=>$id]); 
+})->name('detailequip');
