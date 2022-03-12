@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductResController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,3 +58,6 @@ Route::get('catalog/medicines/{id}',function($id){
 Route::get('catalog/med_equip/{id}',function($id){
     return  view('detail',['detailid'=>$id]); 
 })->name('detailequip');
+
+Route::resource('obat','MedicineController');
+Route::resource('kategori_obat','CategoryController');
